@@ -17,7 +17,7 @@ namespace BasicAuthentication.Authentication;
         public static void Features(WebApplication app)
         {
             app.MapPost("/login",([FromBody]User user)=>{
-                Console.WriteLine(user.Username);
+                //Console.WriteLine(user.Username);
                 //return TypedResults.Ok(user.UserName);
                 
                 if (user.Username == "test" && user.Password == "password")
@@ -46,7 +46,7 @@ namespace BasicAuthentication.Authentication;
                    
                 }
 
-            return Results.UnAuthorized();
+            return Results.BadRequest("Error");
             
             });
         }
