@@ -17,7 +17,7 @@ namespace BasicAuthentication.Authentication;
         public static void Features(WebApplication app)
         {
             app.MapPost("/login",([FromBody]User user)=>{
-                //Console.WriteLine(user.UserName);
+                Console.WriteLine(user.UserName);
                 //return TypedResults.Ok(user.UserName);
                 
                 if (user.Username == "test" && user.Password == "password")
