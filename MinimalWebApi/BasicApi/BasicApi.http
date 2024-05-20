@@ -1,0 +1,7 @@
+@BasicApi_HostAddress = http://localhost:5254
+
+GET {{BasicApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+GET {{BasicApi_HostAddress}}/negeri

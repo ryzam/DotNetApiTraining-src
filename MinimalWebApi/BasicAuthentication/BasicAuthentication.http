@@ -1,0 +1,16 @@
+@BasicAuthentication_HostAddress = http://localhost:5231
+
+GET {{BasicAuthentication_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
+GET {{BasicAuthentication_HostAddress}}/secure
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ0ZXN0IHRva2VuIiwibmFtZSI6InRlc3QiLCJqdGkiOiJhZmQyOWEyYy02Mzk4LTRhZTktYWQxNS1iOGQwNDNkYWMwNmMiLCJleHAiOjE3MTYxNzM3MTYsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTIzMSIsImF1ZCI6InRlc3QtYXVkIn0.nlnVil0PEMGRBQs7cZON9r1qgWiOeZ6QMWg9Zi2TEoE
+###
+POST {{BasicAuthentication_HostAddress}}/login
+Content-Type: application/json
+
+{
+    "Username":"test",
+    "Password":"password"
+}
