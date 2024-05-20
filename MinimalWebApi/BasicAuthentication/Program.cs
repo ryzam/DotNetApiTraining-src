@@ -30,7 +30,7 @@ builder.Services.AddAuthentication(options =>
         ValidateAudience = true,
         ValidateIssuerSigningKey = true,
         ValidIssuer = "http://localhost:5231",
-        ValidAudience = "test-aud",
+        ValidAudience = "http://localhost:5231",
         IssuerSigningKey = new SymmetricSecurityKey(key)
     };
 });

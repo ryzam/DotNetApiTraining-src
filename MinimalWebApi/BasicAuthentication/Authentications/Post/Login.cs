@@ -17,7 +17,7 @@ namespace BasicAuthentication.Authentication;
         public static void Features(WebApplication app)
         {
             app.MapPost("/login",([FromBody]User user)=>{
-                Console.WriteLine(user.UserName);
+                Console.WriteLine(user.Username);
                 //return TypedResults.Ok(user.UserName);
                 
                 if (user.Username == "test" && user.Password == "password")
@@ -35,7 +35,7 @@ namespace BasicAuthentication.Authentication;
 
                     var token = new JwtSecurityToken(
                     issuer: "http://localhost:5231",
-                    audience: "test-aud",
+                    audience: "http://localhost:5231",
                     claims: claims,
                     expires: DateTime.Now.AddMinutes(120),
                     signingCredentials: credentials);
@@ -46,7 +46,7 @@ namespace BasicAuthentication.Authentication;
                    
                 }
 
-            return TypedResults.Ok();
+            return Results.UnAuthorized();
             
             });
         }
